@@ -98,11 +98,14 @@ public class WeatherService {
                         for (WeatherForecastListDataEnvelope.ForecastDataEnvelope data : listData.list) {
                             final WeatherForecast weatherForecast = new WeatherForecast(
                                     listData.city.name, data.timestamp, data.weather.get(0).description,
-                                    data.temp.min, data.temp.max);
+                                    data.temp.min, data.temp.night,data.temp.eve,data.temp.morn,data.temp.max,
+                                    data.speed,data.clouds,data.rain,data.pressure,data.humidity);
                             weatherForecasts.add(weatherForecast);
                         }
 
                         return weatherForecasts;
+
+
                     }
                 });
     }
@@ -157,6 +160,8 @@ public class WeatherService {
         public Location city;
         public ArrayList<ForecastDataEnvelope> list;
 
+
+
         class Location {
             public String name;
         }
@@ -166,11 +171,20 @@ public class WeatherService {
             public long timestamp;
             public Temperature temp;
             public ArrayList<Weather> weather;
+            public double pressure;
+            public double humidity;
+            public float speed;
+            public int clouds;
+            public int rain;
         }
 
         class Temperature {
             public float min;
             public float max;
+            public float night;
+            public float eve;
+            public float morn;
+
         }
     }
 }

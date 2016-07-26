@@ -3,6 +3,7 @@ package com.example.asmaa.weather_application;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -14,9 +15,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.http.HttpException;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -147,7 +150,7 @@ public class WeatherActivity extends Activity {
                     final LayoutInflater layoutInflater = LayoutInflater.from(getContext());
                     convertView = layoutInflater.inflate(R.layout.weather_forecast_list_item, null);
 
-                    viewHolder = new ViewHolder();
+                    viewHolder = new ViewHolder(convertView);
                     viewHolder.dayTextView = (TextView) convertView.findViewById(R.id.day);
                     viewHolder.descriptionTextView = (TextView) convertView
                             .findViewById(R.id.description);
@@ -164,12 +167,16 @@ public class WeatherActivity extends Activity {
 
                 final DayFormatter dayFormatter = new DayFormatter(getActivity());
                 final String day = dayFormatter.format(weatherForecast.getTimestamp());
+                viewHolder.weatherForecast=weatherForecast;
                 viewHolder.dayTextView.setText(day);
                 viewHolder.descriptionTextView.setText(weatherForecast.getDescription());
                 viewHolder.maximumTemperatureTextView.setText(
                         TemperatureFormatter.format(weatherForecast.getMaximumTemperature()));
                 viewHolder.minimumTemperatureTextView.setText(
                         TemperatureFormatter.format(weatherForecast.getMinimumTemperature()));
+
+
+
 
                 return convertView;
             }
@@ -182,7 +189,25 @@ public class WeatherActivity extends Activity {
                 private TextView descriptionTextView;
                 private TextView maximumTemperatureTextView;
                 private TextView minimumTemperatureTextView;
+                private WeatherForecast weatherForecast;
+
+
+                public ViewHolder(View convertView) {
+                    super();
+                    convertView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent detailsActivity = new Intent(v.getContext(), DetailsActivity.class);
+                            detailsActivity.putExtra("WEATHER_FORECAST", (Serializable) weatherForecast);
+                            v.getContext().startActivity(detailsActivity);
+
+
+                        }
+                    });
+                }
+
             }
+
         }
 
         /**

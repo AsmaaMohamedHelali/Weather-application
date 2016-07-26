@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Weather-Application</string>
+    <string name="action_settings">أعدادات</string>
+    <string name="attribution">Weather data by OpenWeatherMap.org</string>
+    <string name="error_fetch_weather">Could not fetch weather data</string>
+    <string name="error_location_unavailable">Could not get current location</string>
+    <string name="today">اليوم</string>
+    <string name="tomorrow">غدا</string>
+    <string name="monday">الاثنين</string>
+    <string name="sky_is_clear">السماء صافية</string>
+    <string name="nineteen_degrees">19°</string>
+    <string name="fifteen_degrees">15°</string>
+    <string name="description">الوصف</string>
+    <string name="min">الصغرى</string>
+    <string name="max">العظمى</string>
+    <string name="hum">الرطوبة</string>
+    <string name="morn">صباحا</string>
+    <string name="even">عصرا</string>
+    <string name="night">مساء</string>
+    <string name="rain">المطر</string>
+    <string name="clouds">السحاب</string>
+    <string name="speed">السرعة</string>
+    <string name="pressure">الضغط</string>
+</resources>

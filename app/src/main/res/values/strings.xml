@@ -10,4 +10,15 @@
     <string name="sky_is_clear">sky is clear</string>
     <string name="nineteen_degrees">19°</string>
     <string name="fifteen_degrees">15°</string>
+    <string name="description">Description</string>
+    <string name="min">Minimum</string>
+    <string name="max">Maximum</string>
+    <string name="hum">Humidity</string>
+    <string name="morn">Morning</string>
+    <string name="even">Evening</string>
+    <string name="night">Night</string>
+    <string name="rain">Rain</string>
+    <string name="clouds">Clouds</string>
+    <string name="speed">Speed</string>
+    <string name="pressure">Pressure</string>
 </resources>
