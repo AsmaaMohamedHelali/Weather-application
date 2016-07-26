@@ -2,8 +2,11 @@ package com.example.asmaa.weather_application;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,7 +16,7 @@ import com.example.asmaa.weather_application.Models.WeatherForecast;
 
 import java.util.List;
 
-public class DetailsActivity extends Activity {
+public class DetailsActivity extends AppCompatActivity {
     private WeatherForecast weatherForecast;
     private TextView tvDayName,tvDayDesc,tvDayMin,tvDayMax,tvDayHumidity,tvNight
             ,tvEven,tvMorn,tvrain,tvpressure,tvspeed,tvclouds;
@@ -24,6 +27,7 @@ public class DetailsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        initToolbar();
         callDataFromIntent();
         if(weatherForecast!=null){
             initViews();
@@ -31,6 +35,22 @@ public class DetailsActivity extends Activity {
         }
 
 
+    }
+
+    private void initToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        setTitle(getString(R.string.day_details));
+        final ActionBar ab = getSupportActionBar();
+        assert ab != null;
+        ab.setDisplayHomeAsUpEnabled(true);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return true;
     }
 
     private void setDataToViews() {

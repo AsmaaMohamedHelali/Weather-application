@@ -33,5 +33,7 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.1.+'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.1.+'
     compile 'de.keyboardsurfer.android.widget:crouton:1.8.5@jar'
+    compile 'com.android.support:support-v4:24.0.0-alpha2'
+    compile 'com.android.support:appcompat-v7:24.0.0-alpha2'
     testCompile 'junit:junit:4.12'
 }
