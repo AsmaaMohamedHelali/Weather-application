@@ -19,7 +19,7 @@ public class WeatherForecast implements Serializable{
     private double humidity;
     private float speed;
     private int clouds;
-    private int rain;
+    private float rain;
 
 
     public WeatherForecast(final String locationName,
@@ -42,7 +42,7 @@ public class WeatherForecast implements Serializable{
                            final String description,
                            final float minimumTemperature,
                            final float night,final float even,final float morning
-    ,final float maximumTemperature,float speed,int clouds,int rain,double pressure,double humidity) {
+    ,final float maximumTemperature,float speed,int clouds,float rain,double pressure,double humidity) {
 
         mLocationName = locationName;
         mTimestamp = timestamp;

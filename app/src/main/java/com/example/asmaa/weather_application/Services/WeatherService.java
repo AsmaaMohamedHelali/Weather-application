@@ -119,6 +119,10 @@ public class WeatherService {
 
         class Weather {
             public String description;
+            private int id;
+            private String main;
+            private String icon;
+
         }
 
         /**
@@ -146,10 +150,51 @@ public class WeatherService {
         public ArrayList<Weather> weather;
         public Main main;
 
+
+
+
+
+
+        private Coord coord;
+        private String base;
+        private Wind wind;
+        private Clouds clouds;
+        private Sys sys;
+
         class Main {
             public float temp;
             public float temp_min;
             public float temp_max;
+
+
+            private Double pressure;
+            private Integer humidity;
+            private Double tempMin;
+            private Double tempMax;
+            private Double seaLevel;
+            private Double grndLevel;
+        }
+
+        class Coord{
+            private double lon;
+            private double lat;
+        }
+        class Wind{
+            private double speed;
+            private double deg;
+
+        }
+        class Sys{
+
+            private double message;
+            private String country;
+            private int sunrise;
+            private int sunset;
+
+        }
+        class Clouds{
+            private int all;
+
         }
     }
 
@@ -162,9 +207,29 @@ public class WeatherService {
 
 
 
+        private double message;
+        private int cnt;
+
+
+
         class Location {
             public String name;
+
+
+
+
+            private int id;
+            private Coord coord;
+            private String country;
+            private int population;
+
+            class Coord {
+                private double lon;
+                private double lat;
+
+            }
         }
+
 
         class ForecastDataEnvelope {
             @SerializedName("dt")
@@ -175,7 +240,14 @@ public class WeatherService {
             public double humidity;
             public float speed;
             public int clouds;
-            public int rain;
+            public float rain;
+
+
+
+
+
+            private Integer deg;
+
         }
 
         class Temperature {
@@ -184,6 +256,7 @@ public class WeatherService {
             public float night;
             public float eve;
             public float morn;
+
 
         }
     }
