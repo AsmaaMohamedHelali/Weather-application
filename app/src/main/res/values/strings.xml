@@ -22,4 +22,7 @@
     <string name="speed">Speed</string>
     <string name="pressure">Pressure</string>
     <string name="day_details">Details of the day</string>
+    <string name="insert_city">Insert City Name</string>
+    <string name="bttnString">Get Weather of Your Location</string>
+    <string name="bttnSearchString">Search</string>
 </resources>

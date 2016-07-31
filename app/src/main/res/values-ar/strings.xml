@@ -22,4 +22,7 @@
     <string name="speed">السرعة</string>
     <string name="pressure">الضغط</string>
     <string name="day_details">تفاصيل اليوم</string>
+    <string name="insert_city">ادخل اسم المدينة</string>
+    <string name="bttnString">احصل ع الطقس من خلال موقعك</string>
+    <string name="bttnSearchString">ابحث</string>
 </resources>
